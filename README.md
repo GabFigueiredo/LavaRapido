@@ -78,7 +78,7 @@ A aplicação permite:
 - Java Swing (GUI)
 - UML para modelagem
 - Organização em pacotes conforme MVC
-- IDE recomendada: Netbeans
+- IDE recomendada: InteliJ
 
 ---
 
