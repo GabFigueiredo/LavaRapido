@@ -14,9 +14,9 @@ import java.sql.SQLException;
 
 public class Conn {
     // Configurações do banco direto no código
-    private static final String URL = "jdbc:postgresql://localhost:5432/LavaRapido";
-    private static final String USER = "postgres";
-    private static final String PASSWORD = "password";
+    private static final String URL = "jdbc:postgresql://localhost:5432/nome_do_banco";
+    private static final String USER = "seu_usuario";
+    private static final String PASSWORD = "sua_senha";
 
     // Método para retornar a conexão
     public static Connection getConnection() throws SQLException {
