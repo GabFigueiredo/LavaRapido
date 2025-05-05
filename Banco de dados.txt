@@ -1,0 +1,31 @@
+CREATE DATABASE IF NOT EXISTS sistema_agendamentos;
+USE sistema_agendamentos;
+
+-- Tabela de Clientes
+CREATE TABLE cliente (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    cpf VARCHAR(14) UNIQUE NOT NULL,
+    telefone VARCHAR(20),
+    email VARCHAR(100),
+    placaVeiculo VARCHAR(10)
+);
+
+-- Tabela de Tipos de Serviço
+CREATE TABLE tipoServico (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    descricao TEXT,
+    preco DECIMAL(10,2) NOT NULL
+);
+
+-- Tabela de Agendamentos
+CREATE TABLE agendamento (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    clienteId INT NOT NULL,
+    tipoServico INT NOT NULL,
+    dataHora DATETIME NOT NULL,
+    status VARCHAR(50) DEFAULT 'Pendente',
+    FOREIGN KEY (clienteId) REFERENCES cliente(id) ON DELETE CASCADE,
+    FOREIGN KEY (tipoServico) REFERENCES tipoServico(id) ON DELETE SET NULL
+);
